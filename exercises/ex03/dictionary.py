@@ -59,12 +59,12 @@ def favorite_color(favorite_color: dict[str, str]) -> str:
     return highest_color
 
 
-def bin_len(the_list: list[str]) -> dict[int, set{str}]:
-    bin_dictionary: dict[int, set{str}] = {}
-    for item in the_list:
-        item_length: int = len(item)
-        if item_length in bin_dictionary: 
-            bin_dictionary[item_length].append(item)
-        else: 
-            bin_dictionary[item_length] = {item}
+def bin_len(the_list: list[str]) -> dict[int, set[str]]:
+    bin_dictionary: dict[int, set[str]] = {}
+    for n in the_list:
+        item_length: int = len(n)
+        if item_length in bin_dictionary:
+            bin_dictionary[item_length].add(n)
+        else:
+            bin_dictionary[item_length] = {n}
     return bin_dictionary

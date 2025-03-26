@@ -3,6 +3,8 @@ __author__: str = "730572179"
 from exercises.ex03.dictionary import invert
 import pytest
 from exercises.ex03.dictionary import count
+from exercises.ex03.dictionary import favorite_color
+from exercises.ex03.dictionary import bin_len
 
 
 test_dictionary: dict[str, str] = {"a": "z", "b": "y", "c": "x"}
@@ -31,7 +33,7 @@ def test_invert_use_2() -> None:
 
 
 test_count_list_0: list[str] = ["blue", "red", "blue"]
-test_count_dict_0: dict[str, int] = {"blue": "2", "red": "1"}
+test_count_dict_0: dict[str, int] = {"blue": 2, "red": 1}
 
 
 def test_count_use_0() -> None:
@@ -40,7 +42,7 @@ def test_count_use_0() -> None:
 
 
 test_count_list_1: list[str] = ["green", "red", "blue"]
-test_count_dict_1: dict[str, int] = {"green": "1", "red": "1", "blue": "1"}
+test_count_dict_1: dict[str, int] = {"green": 1, "red": 1, "blue": 1}
 
 
 def test_count_use_1() -> None:
@@ -59,11 +61,11 @@ test_list_2: list[str] = [
     "green",
 ]
 test_count_dict_2: dict[str, int] = {
-    "greeen": "1",
-    "red": "2",
-    "green": "3",
-    "blue": "1",
-    "yellow": "1",
+    "greeen": 1,
+    "red": 2,
+    "green": 3,
+    "blue": 1,
+    "yellow": 1,
 }
 
 
@@ -71,8 +73,6 @@ def test_count_edge_0() -> None:
     """one edge case test for count"""
     assert count(test_list_2) == test_count_dict_2
 
-
-from exercises.ex03.dictionary import favorite_color
 
 test_dict_0: dict[str, str] = {"jack": "red", "jill": "green", "eric": "red"}
 
@@ -102,9 +102,6 @@ test_dict_2: dict[str, str] = {
 def test_favorite_color_edge_case_0() -> None:
     """an edge case for favorite_color"""
     assert favorite_color(test_dict_2) == "green"
-
-
-from exercises.ex03.dictionary import bin_len
 
 
 def test_bin_len_use_case_0() -> None:
